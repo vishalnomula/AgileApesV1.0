@@ -9,11 +9,21 @@ import android.widget.TextView;
 public class IncorrectAnswerActivity extends AppCompatActivity {
 
     TextView tvIncorrectAnswerUserAnswer;
+    TextView tvIncorrectAnswerCorrectAnswer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_incorrect_answer);
+
+        tvIncorrectAnswerUserAnswer = (TextView)findViewById(R.id.tvIncorrectAnswerUserAnswer);
+        tvIncorrectAnswerUserAnswer.setText(Global.userAnswer);
+
+        tvIncorrectAnswerCorrectAnswer = (TextView)findViewById(R.id.tvIncorrectAnswerCorrectAnswer);
+        tvIncorrectAnswerCorrectAnswer.setText(Global.qandaArrayList.get(Global.currentPosition).getAnswer());
+
+
+        //tvQuizScore.setText("" + Global.bananas);
 
 //        Bundle bundle = getIntent().getExtras();
 //        if (bundle != null) {

@@ -16,6 +16,10 @@ public class CorrectAnswerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_correct_answer);
 
+        tvCorrectAnswerUserAnswer = (TextView)findViewById(R.id.tvCorrectAnswerUserAnswer);
+        tvCorrectAnswerUserAnswer.setText(Global.userAnswer);
+
+
 //        Bundle bundle = getIntent().getExtras();
 //        if (bundle != null) {
 //            String userInput = bundle.getString("userInput");

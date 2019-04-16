@@ -24,7 +24,10 @@ public class QuizActivity extends AppCompatActivity {
     Button btQuizSubmit;
     EditText etQuizAnswer;
     TextView tvQuizScore;
-    ArrayList<Qanda> qandaArrayList = new ArrayList<>();
+    //ArrayList<Qanda> qandaArrayList = new ArrayList<>();
+
+
+
 
     int currentPosition = 0;
 
@@ -48,6 +51,11 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Global.userAnswer = etQuizAnswer.getText().toString();
+
+                Intent intent = new Intent(getApplicationContext(), CorrectAnswerActivity.class);
+                startActivity(intent);
+
 //                String userInput = etQuizAnswer.getText().toString();
 
                 //Toast.makeText(getApplicationContext(), "onClick" + userInput, Toast.LENGTH_SHORT).show();
@@ -57,12 +65,6 @@ public class QuizActivity extends AppCompatActivity {
 //                startActivity(intent);
 
                 checkAnswer();
-
-
-
-
-
-
 
 //                Global.userQuizAnswer = etQuizAnswer.getText().toString();
 
@@ -102,11 +104,11 @@ public class QuizActivity extends AppCompatActivity {
 
     public void getQanda() {
 
-        qandaArrayList.add(new Qanda("_______ are common solutions to common problems where the solution is ineffective and may result in undesired consequences.", "antipatterns"));
+        Global.qandaArrayList.add(new Qanda("_______ are common solutions to common problems where the solution is ineffective and may result in undesired consequences.", "antipatterns"));
 //        qandaArrayList.add(new Qanda("_______ involves team members with different perspectives (customer, development, testing) collaborating to write acceptance tests in advance of implementing the corresponding functionality.", "acceptance test driven development"));
 //        qandaArrayList.add(new Qanda("_______ is a practice where members of the team discuss the expected behavior of a system in order to build a shared understanding of expected functionality.", "behavior driven development"));
-        qandaArrayList.add(new Qanda("_______ and burnup charts track the amount of output (in terms of hours, story points, or backlog items) a team has completed across an iteration or a project.", "burndown charts"));
-        qandaArrayList.add(new Qanda("_______ is the ability of an organization to sense changes internally or externally and respond accordingly in order to deliver value to its customers.", "business agility"));
+        Global.qandaArrayList.add(new Qanda("_______ and burnup charts track the amount of output (in terms of hours, story points, or backlog items) a team has completed across an iteration or a project.", "burndown charts"));
+        Global.qandaArrayList.add(new Qanda("_______ is the ability of an organization to sense changes internally or externally and respond accordingly in order to deliver value to its customers.", "business agility"));
 //        qandaArrayList.add(new Qanda("_______ is the explicit convention that every team member can make changes to any code file as necessary: either to complete a development task, to repair a defect, or to improve the code's overall structure.", "collective code ownership"));
 
     }
@@ -114,10 +116,10 @@ public class QuizActivity extends AppCompatActivity {
     public void setTvQuizQuestion() {
 
         Random rand = new Random();
-        int randomElement = rand.nextInt(qandaArrayList.size());
+        int randomElement = rand.nextInt(Global.qandaArrayList.size());
         currentPosition = randomElement;
 
-        tvQuizQuestion.setText(qandaArrayList.get(currentPosition).getQuestion());
+        tvQuizQuestion.setText(Global.qandaArrayList.get(currentPosition).getQuestion());
 
 
         tvQuizScore.setText("" + Global.bananas);
@@ -128,11 +130,11 @@ public class QuizActivity extends AppCompatActivity {
     public void checkAnswer() {
         String answer = etQuizAnswer.getText().toString().trim().toLowerCase();
 
-        if (answer.equals(qandaArrayList.get(currentPosition).getAnswer())) {
+        if (answer.equals(Global.qandaArrayList.get(currentPosition).getAnswer())) {
             Log.e("answer", "right");
 
             Global.bananas++;
-            currentPosition++;
+            Global.currentPosition++;
             setTvQuizQuestion();
             etQuizAnswer.setText("");
 
@@ -144,7 +146,7 @@ public class QuizActivity extends AppCompatActivity {
 
             Log.e("answer", "wrong");
 
-            currentPosition++;
+            Global.currentPosition++;
             setTvQuizQuestion();
             etQuizAnswer.setText("");
 
