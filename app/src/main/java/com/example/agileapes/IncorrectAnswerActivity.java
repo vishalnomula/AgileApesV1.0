@@ -22,6 +22,8 @@ public class IncorrectAnswerActivity extends AppCompatActivity {
         tvIncorrectAnswerCorrectAnswer = (TextView)findViewById(R.id.tvIncorrectAnswerCorrectAnswer);
         tvIncorrectAnswerCorrectAnswer.setText(Global.qandaArrayList.get(Global.currentPosition).getAnswer());
 
+        //this version has userinput passed to correctactivity and incorrectactivity
+
 
         //tvQuizScore.setText("" + Global.bananas);
 
