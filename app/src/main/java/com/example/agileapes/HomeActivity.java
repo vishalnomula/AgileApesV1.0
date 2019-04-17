@@ -33,4 +33,9 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    public void launchFacebookScreen(View v) {
+        Intent myIntent = new Intent(getBaseContext(), FacebookActivity.class);
+        startActivity(myIntent);
+    }
+
 }

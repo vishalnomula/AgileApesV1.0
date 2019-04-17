@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AgileApes</string>
+    <string name="facebook_app_id">591610874654198</string>
+    <string name="facebook_login_protocol_scheme">fb591610874654198</string>
 </resources>

@@ -1,12 +1,5 @@
 package com.example.agileapes;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
-
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -39,12 +32,13 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
+public class FacebookActivity extends AppCompatActivity {
 
     CallbackManager callbackManager;
     TextView txtEmail, txtBirthday, txtFriends;
     ProgressDialog mDialog;
     ImageView imgAvatar;
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -55,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_facebook);
+
 
         callbackManager = CallbackManager.Factory.create();
 
@@ -71,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                mDialog = new ProgressDialog(MainActivity.this);
+                mDialog = new ProgressDialog(FacebookActivity.this);
                 mDialog.setMessage("Retrieving data...");
                 mDialog.show();
 
@@ -121,13 +116,11 @@ public class MainActivity extends AppCompatActivity {
         try {
             URL profile_picture = new URL("https://graph.facebook.com/"+object.getString("id")+"/picture?width=250&height=250");
 
-            Picasso.with(this).load(profile_picture.toString())
-                    .transform(new CircleTransform())
-                    .into(imgAvatar);
+            Picasso.with(this).load(profile_picture.toString()).into(imgAvatar);
 
-//            txtEmail.setText(object.getString("email"));
-//            txtBirthday.setText(object.getString("birthday"));
-//            txtFriends.setText("Friends: "+object.getJSONObject("friends").getJSONObject("summary").getString("total_count"));
+            txtEmail.setText(object.getString("email"));
+            txtBirthday.setText(object.getString("birthday"));
+            txtFriends.setText("Friends: "+object.getJSONObject("friends").getJSONObject("summary").getString("total_count"));
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -135,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
 
     private void printKeyHash() {
         try {
@@ -152,13 +146,4 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-
-    public void launchHomeActivity(View v) {
-
-        Intent myIntent = new Intent(getBaseContext(), HomeActivity.class);
-        startActivity(myIntent);
-
-    }
-
 }
