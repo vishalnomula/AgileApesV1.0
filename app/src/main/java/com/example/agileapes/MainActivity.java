@@ -59,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
         callbackManager = CallbackManager.Factory.create();
 
-        txtBirthday = (TextView) findViewById(R.id.txtBirthday);
-        txtEmail = (TextView) findViewById(R.id.txtEmail);
-        txtFriends = (TextView) findViewById(R.id.txtFriends);
+//        txtBirthday = (TextView) findViewById(R.id.txtBirthday);
+//        txtEmail = (TextView) findViewById(R.id.txtEmail);
+//        txtFriends = (TextView) findViewById(R.id.txtFriends);
 
         imgAvatar = (ImageView) findViewById(R.id.avatar);
 

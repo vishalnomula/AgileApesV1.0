@@ -1,0 +1,85 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Coles World Square",
+        "hours": "6am - 12am",
+        "phone": "(02) 9283 3121",
+        "description": "Supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.207000,
+          -33.877000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Woolworths Sydney Metcentre",
+        "hours": "6am - 8pm",
+        "phone": "(02) 8565 9236",
+        "description": "Supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.206700,
+          -33.864800
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "IGA X-press",
+        "hours": "8am - 7pm",
+        "phone": "(02) 9221 5925",
+        "description": "Supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.211400,
+          -33.862900
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Woolworths Town Hall",
+        "hours": "6am - 12am",
+        "phone": "(02) 8565 9275",
+        "description": "Supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.207200,
+          -33.873100
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Woolworths Haymarket",
+        "hours": "7am - 12am",
+        "phone": "(02) 8736 7467",
+        "description": "Supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.202700,
+          -33.881000
+        ]
+      }
+    }
+  ]
+}

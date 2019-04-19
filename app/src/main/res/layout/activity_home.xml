@@ -92,12 +92,12 @@
         app:srcCompat="@drawable/settings" />
 
     <Button
-        android:id="@+id/btHomeFacebook"
+        android:id="@+id/btHomeMap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="launchFacebookScreen"
-        android:text="Facebook"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="447dp" />
+        android:onClick="launchMapScreen"
+        android:text="Map"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="458dp" />
 
 </android.support.constraint.ConstraintLayout>
