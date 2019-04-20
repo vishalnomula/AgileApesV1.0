@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -141,7 +142,8 @@ public class MapActivity extends AppCompatActivity implements
         // Inflate the layout with the the MapView. Always inflate this after the Mapbox access token is configured.
         setContentView(R.layout.activity_map);
 
-
+        TextView tvMapBananaNumber = findViewById(R.id.tvMapBananaNumber);
+        tvMapBananaNumber.setText("" + Global.bananas);
 
         //requestPermission();
 
@@ -736,6 +738,11 @@ public class MapActivity extends AppCompatActivity implements
         return activeNetwork != null && activeNetwork.isConnected();
     }
 
+    public void launchHomeScreen(View view) {
+        Intent myIntent = new Intent(getBaseContext(), HomeActivity.class);
+        startActivity(myIntent);
+    }
+
     /**
      * Custom class which creates marker icons and colors based on the selected theme
      */
@@ -814,10 +821,13 @@ public class MapActivity extends AppCompatActivity implements
             return mapStyle;
         }
 
-        public void launchHomeScreen(View v) {
-            Intent myIntent = new Intent(getBaseContext(), HomeActivity.class);
-            startActivity(myIntent);
-        }
+//        public void launchHomeScreen(View v) {
+//            Intent myIntent = new Intent(getBaseContext(), HomeActivity.class);
+//            startActivity(myIntent);
+//        }
+
+
+
 
     }
 }

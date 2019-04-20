@@ -7,6 +7,20 @@
     android:background="@drawable/homebackground"
     tools:context=".HomeActivity">
 
+    <ImageButton
+        android:id="@+id/btHomeGrocery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="131dp"
+        android:background="@android:color/transparent"
+        android:onClick="launchMapScreen"
+        app:layout_constraintBottom_toBottomOf="@+id/btHomeSettings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btHomeSettings"
+        app:layout_constraintTop_toTopOf="@+id/btHomeSettings"
+        app:srcCompat="@drawable/baseline_local_grocery_store_black_18dp" />
+
     <TextView
         android:id="@+id/tvHomeAgileApes"
         android:layout_width="wrap_content"
@@ -90,14 +104,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivHomeMonkeyCartoonClipArt"
         app:srcCompat="@drawable/settings" />
-
-    <Button
-        android:id="@+id/btHomeMap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="launchMapScreen"
-        android:text="Map"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="458dp" />
 
 </android.support.constraint.ConstraintLayout>

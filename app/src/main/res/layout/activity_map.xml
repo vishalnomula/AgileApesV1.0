@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     tools:context=".MapActivity">
 
-    <ImageButton
+    <android.support.v7.widget.AppCompatImageButton
         android:id="@+id/btMapArrowBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,13 +34,45 @@
         mapbox:mapbox_cameraTilt="48"
         mapbox:mapbox_cameraZoom="13"
         mapbox:mapbox_cameraZoomMin="10"
-        mapbox:mapbox_uiAttribution="false"/>
+        mapbox:mapbox_uiAttribution="false">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivMapBananaCartoon"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="32dp"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintTop_toTopOf="parent"
+                mapbox:srcCompat="@drawable/bananacartoon" />
+
+            <TextView
+                android:id="@+id/tvMapBananaNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/windlass"
+                android:textAlignment="viewStart"
+                android:textColor="@color/Brown"
+                android:textSize="36sp"
+                mapbox:layout_constraintBottom_toBottomOf="@+id/ivMapBananaCartoon"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toEndOf="@+id/ivMapBananaCartoon"
+                mapbox:layout_constraintTop_toTopOf="@+id/ivMapBananaCartoon" />
+        </android.support.constraint.ConstraintLayout>
+    </com.mapbox.mapboxsdk.maps.MapView>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/map_layout_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp">
+
+    </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>
